@@ -1,0 +1,267 @@
+<!--pages/applypre/applydetail.wxml-->
+<view class="loan-intro" wx:if="{{display==1}}">
+  <view class="top">
+    <image src="../../images/applypre.jpg" class="out"></image>
+  </view>
+  <view class="ad-box">
+    <view class="ad-content-box">
+      <p class="ad-content ad-content-margin">
+        <text space="emsp"> “普惠微贷”是深圳农商银行为个体工商户、小微企业量身订造的，用于短期生产经营周转的授信产品。</text>
+      </p>
+    </view>
+  </view>
+  <view class="ad-text-box">
+    <view class="ad-title1">服务对象</view>
+    <view class="ad-content-box">
+      <p class="ad-content ad-content-orange">个体工商户、小微企业</p>
+    </view>
+  </view>
+  <view class="ad-text-box">
+    <view class="ad-title">产品要素</view>
+    <view class="intro-box">
+      <view class="intro-line" style="padding-bottom: 0px">
+        <image src="../../images/intro-no1.svg" class="intro-icon" alt="" style="padding-bottom: 0px"></image>
+        <view class="intro-text intro-margin">额度：最高达600万元</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no2.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">期限：最长至60个月</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no3.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">年利率（单利）：最低至5.5%</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no4.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">担保方式：信用、保证、抵押均可</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="ad-text-box">
+    <view class="ad-title">产品特色</view>
+    <view class="intro-box">
+      <view class="intro-line">
+        <image src="../../images/intro-no1.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">信用、保证最高300万元，抵押最高600万元</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no2.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">最快可2个工作日放款</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no3.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">优质客户可申请利率优惠</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no4.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">除利息外不收取任何费用</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="ad-text-box box-margin">
+    <view class="ad-title">申请条件</view>
+    <view class="intro-box">
+      <view class="intro-line">
+        <image src="../../images/intro-no1.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">在深注册营业执照且本地经营6个月以上</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no2.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">具有充足的还款能力</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no3.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">诚信度高，无不良信用记录</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="right-link" bindtap="next">
+    马上申请
+  </view>
+</view>
+
+<view class="loan-intro" wx:if="{{display==2}}">
+  <view class="top">
+    <image src="../../images/applypre.jpg" class="out"></image>
+  </view>
+  <view class="ad-box">
+    <view class="ad-content-box">
+      <p class="ad-content ad-content-margin">
+        <text space="emsp"> “个人创业担保贷款”是指经人力资源保障部门审核具备规定条件的创业者个人为借款人，由担保基金提供担保，由经办银行按规定条件发放，由贴息资金给与贴息，用于支持个人创业的贷款业务。</text>
+      </p>
+    </view>
+  </view>
+  <view class="ad-text-box">
+    <view class="ad-title">产品要素</view>
+    <view class="intro-box">
+      <view class="intro-line" style="padding-bottom: 0px">
+        <image src="../../images/intro-no1.svg" class="intro-icon" alt="" style="padding-bottom: 0px"></image>
+        <view class="intro-text intro-margin">额度：个人最高<span class="orange">60万</span>，合伙经营单个企业合计最高<span class="orange">300万</span>。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no2.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">期限：3+3+3，最多可续贷2次。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no3.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">利率：最高不超过1年期LPR+50BP。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no4.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">还款方式：按月付息，到期一次还本。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no5.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">担保条件：无须动产或不动产抵质押。重点扶持人群无需反担保。</view>
+      </view>
+    </view>
+  </view>
+  <view class="ad-text-box">
+    <view class="ad-title">产品特色</view>
+    <view class="intro-box">
+      <view class="intro-line">
+        <image src="../../images/intro-no1.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">额度高：个人最高<span class="orange">60万</span>，合伙经营单个企业合计最高<span class="orange">300万</span>。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no2.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">贴息：符合条件审批后可享受政府贴息。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no3.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">无须抵质押：无须动产或不动产抵质押。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no4.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">还款灵活：可到期一次性还本。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no5.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">阳光信贷：不与任何中介合作，除利息外不收取任何费用。</view>
+      </view>
+    </view>
+  </view>
+  <view class="ad-text-box box-margin">
+    <view class="ad-title">申请条件</view>
+    <view class="intro-box">
+      <view class="intro-line">
+        <image src="../../images/intro-no1.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">真实经营：借款人在深圳注册企业，有具体经营项目，真实、合法经营。非重点扶持人群（深户及港澳台居民以外人群）经营企业登记注册时间需在3年内。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no2.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">社保要求：借款人在其经营企业连续正常缴交6个月以上社保。（本市普通高校、职业学校、技工学校在校学生不受社保限制）</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no3.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">负债合理：除助学、扶贫、住房、购车贷款和一定金额以下小额消费贷款（含信用卡消费以外），借款人及其配偶无其他消费贷款。</view>
+      </view>
+
+      <view class="intro-line">
+        <image src="../../images/intro-no4.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">反担保：非重点扶持人群需提供第三方信用等形式的反担保。</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no5.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">无不良信用记录。</view>
+      </view>
+      <view class="attention">
+         注：具体以我行相关规定及政府创业担保贷款相关规定的要求为准。
+      </view>
+    </view>
+  </view>
+
+  
+
+  <view class="right-link" bindtap="next">
+    马上申请
+  </view>
+</view>
+
+<view class="loan-intro" wx:if="{{display==3}}">
+  <view class="top">
+    <image src="../../images/easyloan.jpg" class="out"></image>
+  </view>
+  <view class="ad-box">
+    <view class="ad-content-box">
+      <p class="ad-content ad-content-margin">
+        <text space="emsp"> “优易贷”是深圳农商银行为个体工商户、小微企业量身订造的，用于生产经营周转的授信产品。</text>
+      </p>
+    </view>
+  </view>
+  <view class="ad-text-box">
+    <view class="ad-title1">服务对象</view>
+    <view class="ad-content-box">
+      <p class="ad-content ad-content-orange">个体工商户、小微企业</p>
+    </view>
+  </view>
+  <view class="ad-text-box">
+    <view class="ad-title">产品要素</view>
+    <view class="intro-box">
+      <view class="intro-line" style="padding-bottom: 0px">
+        <image src="../../images/intro-no1.svg" class="intro-icon" alt="" style="padding-bottom: 0px"></image>
+        <view class="intro-text intro-margin">额度：最高达30万元</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no2.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">期限：最长至36个月</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no3.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">年利率（单利）：最低至5.5%</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no4.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">担保方式：纯信用</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="ad-text-box">
+    <view class="ad-title">产品特色</view>
+    <view class="intro-box">
+      <view class="intro-line">
+        <image src="../../images/intro-no1.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">操作简:线上申请,流程简便</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no2.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">放款快:最快可当日放款</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no3.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">利率低:优质客户可申请利率优惠</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no4.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">阳光信贷:除利息外不收取任何费用/view>
+      </view>
+    </view>
+  </view>
+
+  <view class="ad-text-box box-margin">
+    <view class="ad-title">申请条件</view>
+    <view class="intro-box">
+      <view class="intro-line">
+        <image src="../../images/intro-no1.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">在深注册营业执照且本地经营6个月以上</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no2.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">具有充足的还款能力</view>
+      </view>
+      <view class="intro-line">
+        <image src="../../images/intro-no3.svg" class="intro-icon" alt=""></image>
+        <view class="intro-text intro-margin">诚信度高，无不良信用记录</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="right-link" bindtap="next">
+    马上申请
+  </view>
+</view>
+</view>

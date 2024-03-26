@@ -1,0 +1,16 @@
+/* pages/result/result.wxss */
+.result{
+    margin: 20px 20px;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.qrcode_block{
+    width:200px;
+    height:200px;
+    flex-direction: column;
+    text-align:center;
+    margin:20px auto 10px auto;
+    display:flex;
+    /*border:dashed 1px #AEAEAE;*/
+}

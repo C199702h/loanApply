@@ -1,0 +1,12 @@
+<!--banner-->
+<view class="container">
+  <view  bindtap="bindViewTap">
+    <image src="https://113.106.72.170/portal/zh_CN/images/pmf_banner2.jpg" bindload="imageLoad"
+style="width:{{imageWidth}}rpx; height:{{imageHeight}}rpx;display:{{showImage?'inline-block':'none'}}"></image>
+  </view>
+  <view class="line" ></view>
+  <view style="margin-top:20px;display:{{showImage?'inline-block':'none'}}">
+    <button type="primary" style="background-color:#508cee;" size="default" loading="{{loading}}"
+         bindtap="loanApply"> 立即申请 </button>
+  </view>
+</view>

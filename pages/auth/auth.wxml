@@ -1,0 +1,87 @@
+<!--pages/auth/auth.wxml-->
+
+<import src="../template/loading.wxml" />
+<template is="loading" data="{{showLoading}}" />
+
+<view class="view-default" wx:if="{{authShow}}">
+  <view class="ui-list">
+    <view class="ui-authtip">
+      <text>*提示:目前暂只开放小微企业主申请通道 </text>
+    </view>
+    
+    <view class="flexImg-block {{checkShow}}"  >
+      <view class="camera-block" bindtap="takePic1">
+        <image class="{{imgClass1}}" src="{{picSrc1}}"></image>
+        <text class="camera-text" wx:if="{{textShow1}}">点击拍摄身份证正面（姓名、身份证号一面）</text>
+      </view>
+      <view class="camera-block" bindtap="takePic2">
+          <image class="{{imgClass2}}" src="{{picSrc2}}"></image>
+          <view></view>
+          <text class="camera-text" wx:if="{{textShow2}}">点击拍摄身份证反面（签证机关、有效期一面）</text>
+      </view>
+    </view>
+    <canvas style="width:600px;height:600px;position:fixed;top:-1200px" canvas-id="myCanvas"></canvas>
+    <canvas style="width:600px;height:600px;position:fixed;top:-600px" canvas-id="myCanvas2"></canvas>
+    
+    <!-- <view class="camera-block" bindtap="takePic3">
+        <image class="{{imgClass3}}" src="{{picSrc3}}"></image>
+        <view></view>
+        <text class="camera-text" wx:if="{{textShow3}}">点击上传本人照片（肩部以上人脸照）</text>
+    </view> -->
+
+    <view class="ui-item">
+      <text class="input-label">姓名: </text>
+      <input class="item-input" type="text"  placeholder="上传照片自动识别" disabled='true' value="{{ClientName}}" bindinput="inputName" />
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label">证件号码: </text>
+      <input class="item-input" type="text"  placeholder="上传照片自动识别" disabled='true' value="{{IdNo}}" bindinput="inputIdNo" bindblur="bindblur_IdNo" />
+    </view>
+
+    <view class="ui-item {{checkShow}} ">
+      <text class="input-label">身份证到期日: </text>
+      <input class="item-input" type="text" placeholder="上传照片自动识别"  disabled='true' value="{{ValidDate}}" bindinput="inputValidDate"/>
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label">手机号码: </text>
+      <input class="item-input "  disabled='{{phoneNumberInput}}' type="number" maxlength="11" placeholder="请输入您的手机号码" value="{{MobilePhoneNo}}" bindinput="inputMobile" bindblur="bindblur_MoiblePhone" />
+    </view>
+    <view class="ui-item {{cardShow}}" >
+      <text class="input-label" >银行卡号码: </text>
+      <input class="item-input "   type="number" maxlength="19" placeholder="请输入您的银行卡号码" value="{{CardNo}}" bindinput="inputCardNo" />
+    </view>
+    <!-- <view class="ui-item {{checkShow}} ">
+      <text class="input-label">图形验证码: </text>
+      <input class="item-input" style="width:80px;" type="text" placeholder="验证码" value="{{_vTokenName}}" maxlength="4" bindinput="inputVToken" bindblur="bindblur_VToken" />
+      <image style="width:68px;height:35px;margin:auto auto;" bindtap="refreshImgToken" src="{{ImgSrc}}"></image>
+      <img src="{{ImgSrc}}" />
+    </view> -->
+
+    <view class="ui-item  {{checkShow}} ">
+      <text class="input-label">短信验证码: </text>
+      <input class="item-input" style="width:160rpx;" type="number" placeholder="短信验证码" maxlength="6" value="{{SmsPassword}}" bindinput="inputSMS" bindblur="bindblur_SMS" />
+      <button type="default" bindtap="getSMS" style="margin:auto auto;line-height:36px;font-size:13px;" loading="{{SmsBtnLoading}}" disabled="{{SmsBtnDisabled}}">{{SMSButtonText}}</button>
+    </view>
+
+    </view>
+
+    <view class="ui-button-content  {{checkShow}} ">
+        <button class="button" bindtap="authClient" disabled="{{NextDisabled}}">下一步</button>
+    </view>
+
+    <view class="ui-button-content {{checkCardShowNext}}" >
+      <button class="button" bindtap="uPay4EltValidate" disabled="{{NextDisabled}}">实名制验证</button>
+    </view>
+    <view class="ui-button-content {{checkShowNext}}" >
+      <button class="button" bindtap="phoneNoValidate" disabled="{{NextDisabled}}">实名制验证</button>
+    </view>
+    <view style="width:100%;display:none;">
+        
+
+        <view class="ui-button-content">
+            <button class="button" bindtap="bindBtnTap" disabled="{{NextDisabled}}">提交</button>
+        </view>
+    </view>
+</view>

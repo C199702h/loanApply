@@ -1,0 +1,47 @@
+/* pages/apply/apply.wxss */
+.len220{
+    width: 200px;
+  }
+  
+  .icon-small{
+    margin-top: 9px;
+  }
+  
+  .isMarriage{
+    padding-left: 50px;
+  }
+  .len200{
+    max-width: 170px;
+    min-width: 170px;
+  }
+  .upLoadPic{
+      display: flex;
+      justify-content: center;
+      align-items:center;
+      flex-direction:column;
+  }
+  .a1{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 15px;
+      line-height: 34px;
+  }
+
+.edit{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+}
+/* .camera-block{
+    width:186px;
+    height:140px;
+    flex-direction: column;
+    text-align:center;
+    border:dashed 1px #AEAEAE;
+    margin:auto auto 20px auto;
+    display:flex;
+    padding:10px;
+} */
+
+     

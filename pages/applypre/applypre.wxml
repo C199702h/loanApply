@@ -1,0 +1,52 @@
+<!--pages/applypre/applypre.wxml-->
+
+<view class = 'default-view' >
+  <view class = 'top'>
+    <image src="../../images/applypre.jpg" class="out"></image>
+  </view>
+  <view class = "bottom" >
+    <image src ="../../images/manage-loan.svg" class="img1"></image>
+    <view class = "right">
+        <view class="type">
+          <span>普惠微贷</span>
+          <icon class="icon-small" type="info_circle" bindtap="dialog" size="17"></icon>
+        </view>
+      <view class="describe">
+        最高<span class="red">600</span><text space="emsp">万 最长期限60个月</text>
+      </view>
+      <view class="right-link" bindtap="next" data-num="1">
+        <span class="text">马上查看</span>
+      </view>
+    </view>
+  </view>
+  <view class = "bottom" >
+    <image src ="../../images/consume-loan.svg" class="img1"></image>
+    <view class = "right">
+        <view class="type">
+          <span>个人创业担保贷款</span>
+          <icon class="icon-small" type="info_circle" bindtap="dialog1" size="17"></icon>
+        </view>
+      <view class="describe">
+        单人最高<span class="red">60</span><text space="emsp">万 合</text>伙企业最高<span class="red">300</span>万
+      </view>
+      <view class="right-link" bindtap="next" data-num="2">
+        <span class="text">马上查看</span>
+      </view>
+    </view>
+  </view>
+  <view class = "bottom" >
+    <image src ="../../images/manage-loan.svg" class="img1"></image>
+    <view class = "right">
+        <view class="type">
+          <span>优易贷</span>
+          <icon class="icon-small" type="info_circle" bindtap="dialog" size="17"></icon>
+        </view>
+      <view class="describe">
+        最高<span class="red">30</span><text space="emsp">万 最长期限36个月</text>
+      </view>
+      <view class="right-link" bindtap="next" data-num="3">
+        <span class="text">马上查看</span>
+      </view>
+    </view>
+  </view>
+</view>

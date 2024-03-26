@@ -1,0 +1,86 @@
+<!-- apply -->
+<import src="../../template/loading.wxml" />
+<template is="loading" data="{{showLoading}}" />
+
+<view>
+  <view class="ui-list">
+    <view class="ui-item">
+      <text class="input-label len110">您的职业: </text>
+      <input class="item-input" type="text" disabled="disabled" placeholder="请选择职业" value="{{occupation.name[1]}}" />
+    </view>
+    <view class="ui-item">
+      <text class="input-label len110">申请金额(元): </text>
+      <input wx:if="{{!showMarriage}}" class="item-input" type="text" bindinput="bindInputAmount" placeholder="请输入申请金额" value="{{ContractAmount}}" />
+      <input wx:if="{{showMarriage}}" class="item-input" type="text" bindinput="bindInputAmount" placeholder="请输入3000~600000" value="{{ContractAmount}}" />
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label len110">贷款期限(月): </text>
+      <picker mode="selector" class="item-picker" bindchange="bindPickerTerm" value="{{TermIndex}}" range="{{TermList}}">
+        <view>{{TermList[TermIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label len110">贷款用途: </text>
+      <input class="item-input" type="text" disabled="disabled" placeholder="请输入贷款用途" value="{{Purpose[1]}}" />
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label len110">企业名称（全称）: </text>
+      <textarea class="item-textarea" type="text" bindinput="bindInputEntName"  placeholder="请输入企业名称（全称）" value="{{EntName}}" />
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label len110">有无房产: </text>
+      <picker class="item-picker" bindchange="bindPickerMortage" value="{{chooseMortageIndex}}" range="{{chooseMortage.name}}">
+        <view>{{chooseMortage.name[chooseMortageIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>
+    </view>
+    <view class="upLoadPic ui-item" wx:if="{{isShowMortgageAddress}}" >
+        <view class="a1" bindtap="takePic1">
+            <image src="{{iconPath}}" class="camera-img-after edit"></image>
+            <div>{{upload?'重新上传房产证':'上传房产证'}}</div>
+        </view>
+        <view class="camera-block" wx:if="{{upload}}">
+            <image class="{{imgClass1}}" src="{{picSrc1}}"></image>
+        </view>
+    </view>
+    <canvas style="width:1200px;height:1200px;position:fixed;top:-2400px" canvas-id="myCanvas-optimalE"></canvas>
+    <view class="ui-item">
+      <text class="input-label len110">电子邮箱: </text>
+      <input class="item-input" type="text" bindinput="bindInputEmail"  placeholder="请输入有效电子邮箱" value="{{Email}}" />
+    </view>
+    <view class="ui-item">
+      <text class="input-label len110">客户经理工号: </text>
+      <input class="item-input" type="text" disabled="{{ClientMgrNo}}" bindblur="bindInputClientMgr" placeholder="请输入客户经理工号" value="{{ClientMgr}}" maxlength="6"/>
+    </view>
+
+    <view class="ui-item" style="display:{{ClientMgr!=null?'flex':'none'}}">
+      <text class="input-label len110">我行客户经理: </text>
+      <text class="input-label">{{ClientMgrName||'未查询到客户经理'}}</text>
+    </view>
+  </view>
+
+  <view style="padding:20px 22px 0px 22px;text-align:center;">
+    <checkbox-group name="checkbox" bindchange="bindChangeCheck">
+      <checkbox value="checkbox1" checked="{{Checked}}"/>
+      <label style="font-size:13px;">
+        我已仔细阅读并同意
+        <text style="color:#FF8401" bindtap="bindGotoPromise">《个人征信授权书》</text>、<text style="color:#FF8401" bindtap="bindGotoTaxAuth">《纳税数据查询授权书》</text>中的内容。
+      </label>
+    </checkbox-group>
+  </view>
+
+  <view class="ui-button-content">
+    <button class="button" disabled="{{!Checked}}" bindtap="bindApplySubmit">我要申请</button>
+  </view>
+
+  <view style="padding:0px 20px 10px 20px;text-align:left;font-size:12px;">
+      <view style="margin-top:10px;margin-bottom:10px;">备注：</view>
+      <view style="margin-top:10px;margin-bottom:10px;line-height:15px;">1、白领上班族最高30万，纯信用，线上放款；小微企业主最高300万，循环使用还款灵活。</view>
+      <view>2、最终贷款金额以我行审批结果为准。</view>
+  </view>
+</view>

@@ -1,0 +1,115 @@
+/* pages/applypre/applydetail.wxss */
+
+.loan-intro{
+  background: #f5f5f5;
+}
+
+.top{
+  background:#ffffff;
+}
+
+.ad-content-orange{
+  padding-left: 30px;
+  color:orange;
+}
+
+.ad-content{
+  padding-top:10px;
+}
+
+.ad-content-box{
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.ad-box{
+  padding-top: 5px;
+  margin-top:0px;
+  font-size:15px;
+  background:#ffffff;
+}
+.out{
+  position: relative;
+  width: 100%;
+  padding:0;
+}
+
+.ad-text-box{
+  font-size:15px;
+  background:#ffffff;
+  position: relative;
+  margin-top:10px;
+}
+
+.intro-box{
+  margin-top:10px;
+  padding-bottom: 15px;
+  padding-left: 5px;
+}
+
+.intro-line{
+  display: flex;
+  flex-flow: row;
+  margin-top: 5px;
+  margin-bottom: 8.5px;
+}
+
+.ad-title{
+  padding-top:10px;
+  padding-bottom: 6px;
+  margin-left: 15px;
+  font-size:20px;
+}
+
+.ad-title1{
+  padding-top:10px;
+  padding-bottom: 12px;
+  margin-left: 15px;
+  font-size:20px;
+}
+
+.intro-icon{
+  min-width: 15px;
+  height: 15px;
+  width: 15px;
+  margin-left: 10px;
+  margin-right: 0px;
+  padding-top: 4px;
+}
+
+.intro-text{
+  padding-top: 0px;
+  margin-left:10px;
+  padding-right: 20px;
+}
+
+.right-link{
+  position: fixed;
+  background: #221715;
+  width: 100%;
+  height: 35px;
+  z-index:665;
+  bottom: 0;
+  text-align: center;
+  color:#ffffff;
+  padding-top: 8px;
+  font-size:16px;
+}
+
+.box-margin{
+  margin-bottom: 40px;
+}
+
+.attention{
+  margin-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color:#A5AEBB;
+}
+
+.orange{
+  color:orange;
+}

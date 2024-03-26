@@ -1,0 +1,16 @@
+/* pages/apply/apply.wxss */
+.len220{
+  width: 200px;
+}
+
+.icon-small{
+  margin-top: 9px;
+}
+
+.isMarriage{
+  padding-left: 50px;
+}
+.len200{
+  max-width: 170px;
+  min-width: 170px;
+}

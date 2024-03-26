@@ -1,0 +1,170 @@
+<!-- apply -->
+<import src="../template/loading.wxml" />
+<template is="loading" data="{{showLoading}}" />
+
+<view class="view-default">
+  <view class="ui-list">
+    <view class="ui-item">
+      <text class="input-label len110">您的职业: </text>
+      <!--<picker mode="selector"  disabled class="item-picker" bindchange="bindPickerOccupation" value="{{occupationIndex}}" range="{{occupation.name}}">
+        <view>{{occupation.name[occupationIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>-->
+      <input class="item-input" type="text" disabled="disabled" placeholder="请选择职业" value="{{occupation.name[1]}}" />
+
+    </view>
+    <view class="ui-item">
+      <text class="input-label len110">申请金额(元): </text>
+      <input wx:if="{{!showMarriage}}" class="item-input" type="text" bindinput="bindInputAmount" placeholder="请输入申请金额" value="{{ContractAmount}}" />
+      <input wx:if="{{showMarriage}}" class="item-input" type="text" bindinput="bindInputAmount" placeholder="请输入3000~600000" value="{{ContractAmount}}" />
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label len110">贷款期限(月): </text>
+      <!--<input class="item-input" type="text" bindinput="bindInputTerm" placeholder="请输入贷款期限(3-60)" value="{{Term}}" />-->
+      <picker mode="selector" class="item-picker" bindchange="bindPickerTerm" value="{{TermIndex}}" range="{{TermList}}">
+        <view>{{TermList[TermIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label len110">贷款用途: </text>
+      <input class="item-input" type="text" disabled="disabled" placeholder="请输入贷款用途" value="{{Purpose[1]}}" />
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label len110">企业名称（全称）: </text>
+      <textarea class="item-textarea" type="text" bindinput="bindInputEntName"  placeholder="请输入企业名称（全称）" value="{{EntName}}" />
+    </view>
+
+    <view class="ui-item" wx:if="{{showHouse}}">
+      <text class="input-label len110">是否能提供房产抵押: </text>
+      <picker class="item-picker1" bindchange="bindPickerMortage" value="{{chooseMortageIndex}}" range="{{chooseMortage.name}}">
+        <view>{{chooseMortage.name[chooseMortageIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>
+    </view>
+
+    <view class="ui-item" style="display:{{propertyTypeIndex!=null?'flex':'none'}}">
+      <text class="input-label len110">房产类型: </text>
+      <picker class="item-picker" bindchange="bindPickerpropertyType" value="{{propertyTypeIndex}}" range="{{propertyType.name}}">
+        <view>{{propertyType.name[propertyTypeIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>
+    </view>
+
+    <view class="ui-item" style="display:{{propertyTypeIndex!=null?'flex':'none'}}">
+      <text class="input-label len110">面积（平米）: </text>
+      <textarea class="item-input" type="text" bindinput="bindInputSquare" placeholder="请输入抵押房产面积（平米）" value="{{AreaSquare}}" />
+    </view>
+
+    <view class="ui-item" style="display:{{propertyTypeIndex!=null?'flex':'none'}}">
+      <text class="input-label len110">可抵押的房产地址: </text>
+      <textarea class="item-textarea" type="text" bindinput="bindInputAddress" placeholder="请输入深圳详细地址" value="{{PropertyAddress}}" />
+    </view>
+
+    <view class="ui-item" wx:if="{{showMarriage}}">
+      <text class="input-label len40">是否已婚: </text>
+      <icon class="icon-small" type="info_circle" bindtap="dialog" size="17"></icon>
+      <picker class="item-picker" bindchange="bindPickerMarriage" value="{{chooseMarriageIndex}}" range="{{chooseMarriage.name}}">
+        <view class="isMarriage">{{chooseMarriage.name[chooseMarriageIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>
+    </view>
+
+    <view class="ui-item" style="display:{{certTypeIndex!=null?'flex':'none'}}">
+      <text class="input-label len110">配偶姓名: </text>
+      <input class="item-input" type="text" bindinput="bindInputMateName" placeholder="请输入配偶姓名" value="{{mateName}}" />
+    </view>
+
+    <view class="ui-item" style="display:{{certTypeIndex!=null?'flex':'none'}}">
+      <text class="input-label len110">配偶证件类型: </text>
+      <picker class="item-picker" bindchange="bindMateCertType" value="{{certTypeIndex}}" range="{{certType.name}}">
+        <view>{{certType.name[certTypeIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>
+    </view>
+
+    <view class="ui-item" style="display:{{certTypeIndex!=null?'flex':'none'}}">
+      <text class="input-label len110">配偶证件号码: </text>
+      <input class="item-input" type="text" bindinput="bindInputMateCertNo" placeholder="请输入配偶证件号码" value="{{mateCertNo}}" />
+    </view>
+
+    <view class="ui-item" style="display:{{certTypeIndex!=null?'flex':'none'}}">
+      <text class="input-label len110" >配偶手机号码: </text>
+      <input class="item-input" type="number" maxlength="11" bindinput="bindInputMatePhoneNo" placeholder="请输入配偶手机号码" value="{{matePhoneNo}}" />
+    </view>
+    
+    <view class="ui-item">
+      <text class="input-label len110">电子邮箱: </text>
+      <input class="item-input" type="text" bindinput="bindInputEmail"  placeholder="请输入有效电子邮箱" value="{{Email}}" />
+    </view>
+
+    <!-- <view class="ui-item">
+      <text class="input-label len110">受理区域: </text> -->
+      <!-- <picker class="item-picker" disabled bindchange="bindPickerCity" value="{{1000}}" range="{{city.name}}">
+        <view>{{city.name[cityIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker> -->
+      <!-- <input class="item-input" type="text" disabled="disabled" placeholder="请选择受理区域" value="{{city.name[0]}}" /> -->
+      
+    <!-- </view> -->
+
+    <view class="ui-item"  wx:if="{{showArea}}" style="display:{{areaIndex!=null?'flex':'none'}}">
+      <text class="input-label len110">行政区: </text>
+      <picker class="item-picker" bindchange="bindPickerArea" value="{{areaIndex}}" range="{{area.name}}">
+        <view>{{area.name[areaIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>
+      
+    </view>
+
+    <view class="ui-item" style="display:{{streetIndex!=null?'flex':'none'}}">
+      <text class="input-label len110">行政街道: </text>
+      <picker class="item-picker" bindchange="bindPickerStreet" value="{{streetIndex}}" range="{{street.name}}">
+        <view>{{street.name[streetIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker> 
+      
+    </view>
+
+    <view class="ui-item">
+      <text class="input-label len110">客户经理工号: </text>
+      <input class="item-input" type="text" disabled="{{ClientMgrNo}}" bindblur="bindInputClientMgr" placeholder="请输入客户经理工号" value="{{ClientMgr}}" maxlength="6"/>
+    </view>
+
+    <view class="ui-item" style="display:{{ClientMgr!=null?'flex':'none'}}">
+      <text class="input-label len110">我行客户经理: </text>
+      <text class="input-label">{{ClientMgrName||'未查询到客户经理'}}</text>
+    </view>
+
+    <view class="ui-item" wx:if="{{showChoice}}">
+      <text class="input-label len200" style="length:40px">若不符合创业贷申请条件时是否愿意选择其他产品:  </text>
+      <picker class="item-picker1" bindchange="bindPickerProduct" value="{{chooseProductIndex}}" range="{{chooseProduct.name}}">
+        <view>{{chooseProduct.name[chooseProductIndex]}}</view>
+        <view class="arrow_down"></view>
+      </picker>
+    </view>
+  </view>
+
+  <view style="padding:20px 22px 0px 22px;text-align:center;">
+    <checkbox-group name="checkbox" bindchange="bindChangeCheck">
+      <checkbox value="checkbox1" checked="{{Checked}}"/>
+      <label style="font-size:13px;">
+        我已仔细阅读并同意
+        <text style="color:#FF8401" bindtap="bindGotoPromise">《个人征信授权书》</text>、<text style="color:#FF8401" bindtap="bindGotoTaxAuth">《纳税数据查询授权书》</text>中的内容。
+      </label>
+    </checkbox-group>
+  </view>
+
+  <view class="ui-button-content">
+    <button class="button" disabled="{{!Checked}}" bindtap="bindApplySubmit">我要申请</button>
+  </view>
+
+  <view style="padding:0px 20px 10px 20px;text-align:left;font-size:12px;">
+      <view style="margin-top:10px;margin-bottom:10px;">备注：</view>
+      <view style="margin-top:10px;margin-bottom:10px;line-height:15px;">1、白领上班族最高30万，纯信用，线上放款；小微企业主最高300万，循环使用还款灵活。</view>
+      <view>2、最终贷款金额以我行审批结果为准。</view>
+  </view>
+</view>
